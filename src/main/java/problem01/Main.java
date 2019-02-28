@@ -39,6 +39,28 @@ public class Main {
 	}
 	
 	public static boolean checkAnswer(int answer) {
-		return true;
+		
+		Scanner scanner = new Scanner(System.in);
+		while(answer<min || answer >max)
+		{
+			System.out.print( "[" + min + "-" + max + "] 사이의 값 입력:" );
+			answer = scanner.nextInt();
+			System.out.println("");
+			
+		}
+		count++;
+		if(answer>randomNumber)
+		{
+			max=answer;
+		}
+		if(answer<randomNumber)
+		{
+			min=answer;
+		}
+		if(answer==randomNumber)
+		{
+			return true;
+		}
+		return false;
 	}
 }
